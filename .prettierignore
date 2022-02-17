@@ -1,0 +1,6 @@
+dist/
+*.d.ts
+coverage
+.coverage
+.nyc_output
+*.html

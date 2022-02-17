@@ -1,0 +1,90 @@
+# Logs
+logs
+*.log
+
+# Folder used for storing model files
+data/ctlearn
+
+# local creds file for python devenv
+ctlearn.env
+
+tmp/
+
+node_modules
+
+# Users Environment Variables
+.lock-wscript
+
+.idea
+.DS_Store
+
+# coverage reports
+coverage
+.nyc_output
+htmlcov
+
+# pytest cache
+.pytest_cache/*
+
+# Visual studio code
+.vscode/*
+
+# Infrastructure dist
+infrastructure/**/dist/**
+*.vmdk
+
+#
+# Python stuff
+#
+__pycache__/
+*.py[cod]
+*~
+*.egg-info/
+.tox/
+.coverage
+.coverage/
+requirements.local.txt
+.mypy_cache
+.ipynb_checkpoints
+
+# Terraform stuff
+
+### https://raw.github.com/github/gitignore/abad92dac5a4306f72242dae3bca6e277bce3615/Terraform.gitignore
+
+# used for testing
+terraform.tfvars
+.env
+
+# Compiled files
+*.tfstate
+*.tfstate.backup
+
+# # Module directory
+.terraform/
+
+*.iml
+
+# S3Cache directory
+python/lib/ctlearn/ctlearn/data/s3
+
+.reify-cache
+version.txt
+
+# visual studio code
+*.vscode/
+*.code-workspace
+package.json.tar
+.history/*
+
+# Vagrant stuff
+*.vagrant
+
+# Ansible .retry
+*.retry
+*.ipynb
+*.bz2
+*.csv
+package-lock.json
+js/lib/emails/*.html
+tools/gql-parse-experiment/parse/workspace
+tools/dig_upload_travelers/data
