@@ -15,7 +15,7 @@
     "@types/jest": "^27.4.0",
     "@types/mongodb": "^3.5.14",
     "@types/mysql": "^2.15.10",
-    "@types/node": "^16.0.0",
+    "@types/node": "^15.12.2",
     "@types/pg": "^7.14.3",
     "@types/superagent": "^4.1.7",
     "@types/superagent-retry-delay": "^2.6.0",

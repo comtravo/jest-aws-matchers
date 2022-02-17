@@ -1,6 +1,8 @@
 import * as AWS from 'aws-sdk';
+
+import { AWS_ACCOUNT_ID } from './helpers';
 import { awsConfig } from './aws_retry_config';
-import {AWS_ACCOUNT_ID} from './helpers'
+
 // import { IAMPolicy } from './interfaces';
 
 // function generateExpectedSNSPolicyForArn(topicArn: string): IAMPolicy {

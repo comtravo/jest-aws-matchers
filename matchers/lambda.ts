@@ -1,7 +1,8 @@
-import { AWS_REGION } from '../lib/helpers';
 import { getLambdaFunction, lambdaClient } from '../lib/lambda';
 import { IAMPolicy, Principal } from '../lib/interfaces';
 import { PASS as pass, result } from './result';
+
+import { AWS_REGION } from '../lib/helpers';
 import { generateSQSARN } from '../lib/sqs';
 import { Lambda } from 'aws-sdk';
 
@@ -9,7 +10,7 @@ async function lambdaToPassBasicTests(lambdaName: string) {
   const getLambdaFunctionResponse = await getLambdaFunction(lambdaName);
 
   const expectedTags: Lambda.Tags = {
-    Name: lambdaName,
+    Name: lambdaName
     // environment: CT_ENVIRONMENT
   };
 
@@ -28,7 +29,7 @@ async function lambdaTohaveConfiguration(lambdaName: string, expectedLambdaConfi
   const getLambdaFunctionResponse = await getLambdaFunction(lambdaName);
 
   const expectedTags: Lambda.Tags = {
-    Name: lambdaName,
+    Name: lambdaName
     // environment: CT_ENVIRONMENT
   };
 

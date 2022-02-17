@@ -1,7 +1,3 @@
-declare namespace NodeJS {
-  interface Global {}
-}
-
 declare namespace jest {
   interface Matchers<R> {
     arrayOfObjectsToHavePartialObject<I>(expected: I): R;

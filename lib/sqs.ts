@@ -1,5 +1,6 @@
-import { awsConfig } from './aws_retry_config';
 import { AWS_ACCOUNT_ID, AWS_REGION } from './helpers';
+
+import { awsConfig } from './aws_retry_config';
 import { SQS } from 'aws-sdk';
 
 export const enum SQSType {

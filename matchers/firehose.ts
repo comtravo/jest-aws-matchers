@@ -1,9 +1,9 @@
+import { AWS_ACCOUNT_ID, AWS_REGION } from '../lib/helpers';
 import { getIAMRoleAttachedPolicies, getIAMRoleResponse } from '../lib/iam';
 import { IAMPolicy, Statement } from '../lib/interfaces';
 import { PASS as pass, result } from './result';
 
 import { firehoseClient } from '../lib/firehose';
-import { AWS_ACCOUNT_ID, AWS_REGION } from '../lib/helpers';
 
 export async function firehoseToHaveAssumeRolePolicy(params: { firehoseName: string }) {
   const iamRoleResponse = await getIAMRoleResponse(params.firehoseName);
