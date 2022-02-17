@@ -1,6 +1,6 @@
 import * as AWS from 'aws-sdk';
 import { awsConfig } from './aws_retry_config';
-import { AWS_ACCOUNT_ID, AWS_REGION } from './helpers';
+// import { AWS_ACCOUNT_ID, AWS_REGION } from './helpers';
 
 export const ecsClient = new AWS.ECS(awsConfig);
 
