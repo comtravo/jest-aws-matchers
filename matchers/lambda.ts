@@ -1,4 +1,4 @@
-import { AWS_REGION, CT_ENVIRONMENT } from '../lib/helpers';
+import { AWS_REGION } from '../lib/helpers';
 import { getLambdaFunction, lambdaClient } from '../lib/lambda';
 import { IAMPolicy, Principal } from '../lib/interfaces';
 import { PASS as pass, result } from './result';
@@ -10,7 +10,7 @@ async function lambdaToPassBasicTests(lambdaName: string) {
 
   const expectedTags: Lambda.Tags = {
     Name: lambdaName,
-    environment: CT_ENVIRONMENT
+    // environment: CT_ENVIRONMENT
   };
 
   expect(getLambdaFunctionResponse.Configuration?.FunctionName).toEqual(lambdaName);
@@ -29,7 +29,7 @@ async function lambdaTohaveConfiguration(lambdaName: string, expectedLambdaConfi
 
   const expectedTags: Lambda.Tags = {
     Name: lambdaName,
-    environment: CT_ENVIRONMENT
+    // environment: CT_ENVIRONMENT
   };
 
   expect(getLambdaFunctionResponse.Configuration?.FunctionName).toMatch(lambdaName);

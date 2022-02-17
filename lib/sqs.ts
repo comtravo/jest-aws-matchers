@@ -1,4 +1,5 @@
 import { awsConfig } from './aws_retry_config';
+import { AWS_ACCOUNT_ID, AWS_REGION } from './helpers';
 import { SQS } from 'aws-sdk';
 
 export const enum SQSType {
@@ -9,7 +10,7 @@ export const enum SQSType {
 export const sqsClient = new SQS(awsConfig);
 
 export function generateSQSURL(queueName: string, sqsType: SQSType = SQSType.Standard) {
-  let url = `https://sqs.${AWS_REGION}.amazonaws.com/${CT_AWS_ACCOUNT_ID}/${queueName}`;
+  let url = `https://sqs.${AWS_REGION}.amazonaws.com/${AWS_ACCOUNT_ID}/${queueName}`;
 
   if (sqsType === SQSType.Fifo) {
     url += '.fifo';
@@ -19,7 +20,7 @@ export function generateSQSURL(queueName: string, sqsType: SQSType = SQSType.Sta
 }
 
 export function generateSQSARN(queueName: string, sqsType: SQSType = SQSType.Standard) {
-  let arn = `arn:aws:sqs:${AWS_REGION}:${CT_AWS_ACCOUNT_ID}:${queueName}`;
+  let arn = `arn:aws:sqs:${AWS_REGION}:${AWS_ACCOUNT_ID}:${queueName}`;
 
   if (sqsType === SQSType.Fifo) {
     arn += '.fifo';

@@ -1,7 +1,7 @@
 // import { IAMPolicy, Statement } from '../lib/interfaces';
 import { PASS as pass, result } from './result';
 
-import { CT_AWS_ACCOUNT_ID } from '../lib/helpers';
+import { AWS_ACCOUNT_ID } from '../lib/helpers';
 import { SNS } from 'aws-sdk';
 import { snsClient } from '../lib/sns';
 interface EffectiveDeliveryPolicy {
@@ -85,7 +85,7 @@ async function snsToHaveSubscriptionWithSqs(snsTopicArn: string, sqsTopicArn: st
     .promise();
 
   const expectedSubscription: SNS.Subscription = {
-    Owner: CT_AWS_ACCOUNT_ID,
+    Owner: AWS_ACCOUNT_ID,
     Protocol: 'sqs',
     Endpoint: sqsTopicArn,
     TopicArn: snsTopicArn
@@ -131,7 +131,7 @@ async function snsToPassBasicSNSTests(snsTopicArn: string) {
   //   Resource: snsTopicArn,
   //   Condition: {
   //     StringEquals: {
-  //       'AWS:SourceOwner': CT_AWS_ACCOUNT_ID
+  //       'AWS:SourceOwner': AWS_ACCOUNT_ID
   //     }
   //   }
   // };
@@ -151,7 +151,7 @@ async function snsToPassBasicSNSTests(snsTopicArn: string) {
     }
   };
 
-  expect(res.Attributes!.Owner).toEqual(CT_AWS_ACCOUNT_ID);
+  expect(res.Attributes!.Owner).toEqual(AWS_ACCOUNT_ID);
   expect(Number(res.Attributes!.SubscriptionsPending)).toEqual(0);
   expect(Number(res.Attributes!.SubscriptionsConfirmed)).toBeGreaterThan(0);
   // expect(snsIAMPolicy.Statement).arrayOfObjectsToHavePartialObject(expectedIAMStatement);

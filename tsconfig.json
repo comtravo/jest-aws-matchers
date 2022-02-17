@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "strict": true,
+    // "strict": true,
     "outDir": "./dist",
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "types": ["node", "jest"],
-    "lib": ["es2017"],
-    "resolveJsonModule": true,
+    // "noImplicitAny": true,
+    // "noUnusedLocals": true,
+    // "types": ["node", "jest"],
+    // "lib": ["es2017"],
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es2017",
     "experimentalDecorators": true,
     "esModuleInterop": true
   },

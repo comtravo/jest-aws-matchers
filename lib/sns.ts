@@ -1,5 +1,6 @@
 import * as AWS from 'aws-sdk';
 import { awsConfig } from './aws_retry_config';
+import {AWS_ACCOUNT_ID} from './helpers'
 // import { IAMPolicy } from './interfaces';
 
 // function generateExpectedSNSPolicyForArn(topicArn: string): IAMPolicy {
@@ -63,7 +64,7 @@ export async function basicSNSTests(topicArn: string) {
     throw new Error(`invalid response: ${res}`);
   }
 
-  // expect(res.Attributes?.Owner).toEqual(CT_AWS_ACCOUNT_ID);
+  expect(res.Attributes?.Owner).toEqual(AWS_ACCOUNT_ID);
   expect(res.Attributes?.SubscriptionsDeleted).toEqual('0');
   expect(res.Attributes?.SubscriptionsPending).toEqual('0');
   expect(res.Attributes?.TopicArn).toEqual(topicArn);

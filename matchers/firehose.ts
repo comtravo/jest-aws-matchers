@@ -3,6 +3,7 @@ import { IAMPolicy, Statement } from '../lib/interfaces';
 import { PASS as pass, result } from './result';
 
 import { firehoseClient } from '../lib/firehose';
+import { AWS_ACCOUNT_ID, AWS_REGION } from '../lib/helpers';
 
 export async function firehoseToHaveAssumeRolePolicy(params: { firehoseName: string }) {
   const iamRoleResponse = await getIAMRoleResponse(params.firehoseName);
@@ -59,7 +60,7 @@ export async function firehoseToHaveIAMPolicy(params: { iamRoleName: string; s3B
         Sid: '',
         Effect: 'Allow',
         Action: 'logs:*',
-        Resource: `arn:aws:logs:${AWS_REGION}:${CT_AWS_ACCOUNT_ID}:log-group:/aws/kinesisfirehose/${params.iamRoleName}:log-stream:*`
+        Resource: `arn:aws:logs:${AWS_REGION}:${AWS_ACCOUNT_ID}:log-group:/aws/kinesisfirehose/${params.iamRoleName}:log-stream:*`
       }
     ]
   };
@@ -85,7 +86,7 @@ export async function firehoseToPassBasicTests(params: {
 
   expect(res.DeliveryStreamDescription.DeliveryStreamStatus).toEqual('ACTIVE');
   expect(res.DeliveryStreamDescription.DeliveryStreamARN).toMatch(
-    `arn:aws:firehose:${AWS_REGION}:${CT_AWS_ACCOUNT_ID}:deliverystream/${params.firehoseName}`
+    `arn:aws:firehose:${AWS_REGION}:${AWS_ACCOUNT_ID}:deliverystream/${params.firehoseName}`
   );
 
   const firehoseDestinationConfiguration = res.DeliveryStreamDescription.Destinations;

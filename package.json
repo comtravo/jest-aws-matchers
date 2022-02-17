@@ -6,15 +6,16 @@
   "author": "Comtravo GmbH",
   "license": "MIT",
   "private": false,
+  "type": "module",
   "scripts": {
     "fix": "prettier --write --parser typescript --config .prettierrc '**/*.ts' && eslint --fix --ext js,ts .",
     "lint": "prettier --check --parser typescript --config .prettierrc '**/*.ts' && eslint --ext js,ts ."
   },
   "devDependencies": {
-    "@types/jest": "^26.0.3",
+    "@types/jest": "^27.4.0",
     "@types/mongodb": "^3.5.14",
     "@types/mysql": "^2.15.10",
-    "@types/node": "^12.12.14",
+    "@types/node": "^16.0.0",
     "@types/pg": "^7.14.3",
     "@types/superagent": "^4.1.7",
     "@types/superagent-retry-delay": "^2.6.0",
@@ -37,6 +38,7 @@
     "superagent": "^5.2.1",
     "superagent-retry-delay": "^2.6.5",
     "ts-jest": "^26.1.1",
-    "typescript": "^3.7.5"
+    "typedoc": "^0.22.11",
+    "typescript": "^4.5.5"
   }
 }
