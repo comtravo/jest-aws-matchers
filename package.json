@@ -6,7 +6,6 @@
   "author": "Comtravo GmbH",
   "license": "MIT",
   "private": false,
-  "type": "module",
   "scripts": {
     "fix": "prettier --write --parser typescript --config .prettierrc '**/*.ts' && eslint --fix --ext js,ts .",
     "lint": "prettier --check --parser typescript --config .prettierrc '**/*.ts' && eslint --ext js,ts ."
